@@ -1,4 +1,4 @@
-React Lifecycles Notes:
+# React Lifecycles Notes:
 
 
 ## Mounting Phase:
@@ -43,3 +43,20 @@ Purpose of componentWillUnmount (CWU):
    - remove all manual event listeners
    - remove/stop any timers/intervals
    - warn users they are about to leave the form/page - making sure they want to leave (ex: before saving changes)
+
+
+# Q+A:
+What's the difference between being mounted and being rendered?
+- Mounting is a phase that includes many lifecycle methods - many points in time where we can run code 
+- Rendering is a single lifecycle method - one point in time where we can run some code
+
+Is CDM and useEffect the same thing? One for a class and one for a functional component?
+- They're close, but not exactly - there is an important distinction to keep in mind
+
+Will update below:
+CDM() - 
+
+useEffect() - 
+
+What are the cases where calling super() is required vs. simply using state={}?
+- will see this soon
