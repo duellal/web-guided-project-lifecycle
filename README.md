@@ -88,3 +88,5 @@ state = {
 
 this.setState.key1
 this.setState.key2
+
+- setState() is doing the spread "under the hood" so there is no reason to do this
