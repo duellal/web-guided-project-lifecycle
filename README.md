@@ -59,4 +59,32 @@ CDM() -
 useEffect() - 
 
 What are the cases where calling super() is required vs. simply using state={}?
-- will see this soon
+- If you remove constructor(), you can have a class property called state={}
+   - b/c the browser wraps the state={} inside of a constructor
+
+If CDU() is a method that you could use to stop a component from calling render, when would that be an appropriate time to use?
+- 
+
+When would you use prevProps? Can you give an example?
+- componentDidUpdate(prevProps, prevState){
+   if(this.props.id !== prevProps.id){
+      fetch data
+   }
+}
+
+Can you explain what is happending "under the hood" that allows us to NOT need to spread state in setState() like we needed to do in useState() or reducers?
+- both are tracking something through the life of the component
+
+Function Component:
+creates the state + a setter function for that state
+const [name, setName] = useState('')
+
+Class Component:
+creates own class property called state:
+state = {
+   key1: value,
+   key2: value
+   }
+
+this.setState.key1
+this.setState.key2
