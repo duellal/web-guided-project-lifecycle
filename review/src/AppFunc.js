@@ -6,7 +6,18 @@ const AppFunc = () => {
   const handleClick = () => {
     setName("Allison");
   };
+  console.log('AppFunc: Component Constructed - 1st render starting')
 
+  useEffect(() => {
+    console.log('AppFunc: Component Mounted - Part of 1st render')
+  }, [])
+
+  useEffect(() => {
+    console.log('AppFunc: Component Mounted - Part of 1st render + all other renders')
+  })
+
+  console.log('AppFunc: Component Rendered')
+  
   return (
     <div>
       <h1>Hello {name}!</h1>
