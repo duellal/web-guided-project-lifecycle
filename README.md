@@ -50,20 +50,26 @@ What's the difference between being mounted and being rendered?
 - Mounting is a phase that includes many lifecycle methods - many points in time where we can run code 
 - Rendering is a single lifecycle method - one point in time where we can run some code
 
+
 Is CDM and useEffect the same thing? One for a class and one for a functional component?
 - They're close, but not exactly - there is an important distinction to keep in mind
 
-Will update below:
-CDM() - 
+CDM() - running only during a specific time 
 
-useEffect() - 
+useEffect() - synchronizes with a certain state
+ex:   useEffect(fn) //all states
+      useEffect(fn, []) //no state
+      useEffect(fn, [these states])
+
 
 What are the cases where calling super() is required vs. simply using state={}?
 - If you remove constructor(), you can have a class property called state={}
    - b/c the browser wraps the state={} inside of a constructor
 
+
 If CDU() is a method that you could use to stop a component from calling render, when would that be an appropriate time to use?
 - 
+
 
 When would you use prevProps? Can you give an example?
 - componentDidUpdate(prevProps, prevState){
@@ -71,6 +77,7 @@ When would you use prevProps? Can you give an example?
       fetch data
    }
 }
+
 
 Can you explain what is happending "under the hood" that allows us to NOT need to spread state in setState() like we needed to do in useState() or reducers?
 - both are tracking something through the life of the component
